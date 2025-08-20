@@ -1,0 +1,221 @@
+{
+  "url": "https://target.site/form",
+  "actions": [
+    {
+      "type": "input_text",
+      "action": {
+        "by": "css",
+        "value": "#firstName",
+        "data": "Иван"
+      }
+    },
+    {
+      "type": "click",
+      "action": {
+        "by": "css",
+        "value": "#submit"
+      }
+    },
+    {
+      "type": "wait",
+      "action": {
+        "by": "css",
+        "value": "#result",
+        "state": "visible"
+      }
+    },
+    {
+      "type": "hover",
+      "action": {
+        "by": "css",
+        "value": "#menu"
+      }
+    },
+    {
+      "type": "drag_and_drop",
+      "action": {
+        "source": "#item",
+        "target": "#cart"
+      }
+    },
+    {
+      "type": "press_key",
+      "action": {
+        "by": "css",
+        "value": "#field",
+        "key": "ENTER"
+      }
+    },
+    {
+      "type": "upload_file",
+      "action": {
+        "by": "css",
+        "value": "#upload",
+        "path": "/tmp/file.txt"
+      }
+    },
+    {
+      "type": "scroll",
+      "action": {
+        "x": 0,
+        "y": 500
+      }
+    },
+    {
+      "type": "scroll_into_view",
+      "action": {
+        "by": "css",
+        "value": "#footer"
+      }
+    },
+    {
+      "type": "right_click",
+      "action": {
+        "by": "css",
+        "value": "#context"
+      }
+    },
+    {
+      "type": "double_click",
+      "action": {
+        "by": "css",
+        "value": "#btn"
+      }
+    },
+    {
+      "type": "back",
+      "action": {}
+    },
+    {
+      "type": "forward",
+      "action": {}
+    },
+    {
+      "type": "reload",
+      "action": {}
+    },
+    {
+      "type": "iframe_switch",
+      "action": {
+        "by": "css",
+        "value": "#iframe1"
+      }
+    },
+    {
+      "type": "iframe_default",
+      "action": {}
+    },
+    {
+      "type": "wait_js_condition",
+      "action": {
+        "script": "return document.readyState==='complete'"
+      }
+    },
+    {
+      "type": "fetch_request",
+      "action": {
+        "url": "/api/data"
+      }
+    },
+    {
+      "type": "wait_network_request",
+      "action": {
+        "url": "/api/data",
+        "timeout": 5000
+      }
+    },
+    {
+      "type": "set_attribute",
+      "action": {
+        "by": "css",
+        "value": "#el",
+        "attr": "data-test",
+        "val": "ok"
+      }
+    },
+    {
+      "type": "remove_attribute",
+      "action": {
+        "by": "css",
+        "value": "#el",
+        "attr": "disabled"
+      }
+    },
+    {
+      "type": "remove_element",
+      "action": {
+        "by": "css",
+        "value": "#ads"
+      }
+    },
+    {
+      "type": "new_window",
+      "action": {
+        "url": "https://google.com"
+      }
+    },
+    {
+      "type": "close_window",
+      "action": {}
+    },
+    {
+      "type": "download_click",
+      "action": {
+        "by": "css",
+        "value": "#download"
+      }
+    },
+    {
+      "type": "save_pdf",
+      "action": {
+        "path": "/tmp/page.pdf"
+      }
+    },
+    {
+      "type": "recognize_captcha",
+      "action": {
+        "by": "css",
+        "value": "#captchaImage",
+        "recognize": "$captchaCode",
+        "provider": "rucaptcha"
+      }
+    },
+    {
+      "type": "screenshot",
+      "action": {
+        "path": "/tmp/screen.png"
+      }
+    },
+    {
+      "type": "extract",
+      "action": {
+        "selectors": [
+          {
+            "name": "title",
+            "by": "css",
+            "value": "#result .title"
+          }
+        ]
+      }
+    },
+    {
+      "type": "eval_js",
+      "action": {
+        "script": "return window.location.href"
+      }
+    },
+    {
+      "type": "sleep",
+      "action": {
+        "ms": 2000
+      }
+    }
+  ],
+  "return": {
+    "html": true,
+    "screenshot": false
+  },
+  "proxy": null,
+  "headless": true,
+  "timeout_sec": 40
+}

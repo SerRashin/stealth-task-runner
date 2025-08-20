@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  st-runner:
+    build: .
+    container_name: st-runner
+    shm_size: "2gb"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - UC_DOWNLOAD_DIR=/tmp/uc_downloads
+      - DEFAULT_CAPTCHA_PROVIDER=${DEFAULT_CAPTCHA_PROVIDER:-twocaptcha}
+      - CAPTCHA_API_KEY=${CAPTCHA_API_KEY}
+      - CAPTCHA_POLL_SEC=${CAPTCHA_POLL_SEC:-5}
+      - CAPTCHA_MAX_TRIES=${CAPTCHA_MAX_TRIES:-20}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./downloads:/tmp/uc_downloads
+    restart: unless-stopped
